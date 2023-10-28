@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+	<div class="arrierePlanGris"></div>
+    <!-- Modale mes projets -->
+    <form id="modaleMesProjets" class="apparenceModales apparenceModalesMesProjets">
+      <button class="croixFermetureModales">
+        <img src="assets/icons/fermer.png" alt="" />
+      </button>
+      <section class="mesProjetsHeader">
+        <h3>Galerie photo(s)</h3>
+      </section>
+      <div class="mesProjetsBody barreScroll"></div>
+      <div class="mesProjetsFooter">
+        <button class="boutonAjouter">Ajouter une photo</button>
+        <button class="boutonSupprimer">Supprimer la galerie</button>
+      </div>
+    </form>
+<!-- Modale ajouter images -->
+<form id="modaleAjouterImages" class="apparenceModales">
+  <button class="flecheRetour">
+    <img src="assets/icons/fleche-gauche.png" alt="" />
+  </button>
+  <button class="croixFermetureModales">
+    <img src="assets/icons/fermer.png" alt="" />
+  </button>
+  <section class="AjouterImagesHeader">
+    <h3>Ajout photo(s)</h3>
+  </section>
+  <div class="AjouterImagesBody">
+    <div class="ajouteTonImage">
+      <img src="assets/icons/image.png" alt="" id="defaultImage" />
+      <img src="#" alt="" id="previewImage" style="display: none" />
+      <label for="file" class="personnalisationInputImage">+ Ajouter photo</label>
+      <input type="file" id="file" class="saisirImage" />
+      <p class="precisionPoids">jpg. png : 4mo max</p>
+    </div>
+    <div class="leTitreDeTonImage">
+      <h4>Titre</h4>
+      <input id="ajouteTonTitre" type="text" />
+    </div>
+    <div class="laCategorieDeTonImage">
+      <h4>Catégorie</h4>
+      <select id="menuDeroulantCategories"></select>
+    </div>
+  </div>
+  <p class="messageErreur"></p>
+  <div class="AjouterImagesFooter">
+    <button disabled class="boutonValider">Valider</button>
+  </div>
+</form>
+
+<div class="modeEdition">
+  <img src="assets/icons/editer.png" alt="icône d'édition" />
+  <p>Mode édition</p>
+  <button>publier les changements</button>
+</div>
+
+
+
+<header>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+	<nav>
+		<ul>
+			<li><a class="nav-link" href="#portfolio">projets</a></li>
+			<li><a class="nav-link" href="#contact">contact</a></li>
+			<li id="login-nav-link"><a class="nav-link" href="/FrontEnd/login/login.html">login</a></li>
+			<li id="logout-nav-link"><a  class="nav-link" href="#">logout</a></li>
+			<li><a class="nav-link" href="https://www.instagram.com/" target="_blank"><img src="./assets/icons/instagram.png" alt="Instagram"></a></li>
+		</ul>
+	</nav>
+</header>
+<main>
+	<section id="introduction">
+		<figure>
+			<img id="photoArchitect" src="./assets/images/sophie-bluel.png" alt="Photo Architecte">
+			<!-- <button type="button" id="modif-img" class="admin-tool"><i class="fa-solid fa-pen-to-square"></i> modifier</button> -->
+			<label for="changePhotoHome" id="modif-img" class="admin-tool"></label>
+			<input type="file" name="changePhotoHome" id="changePhotoHome" accept="image/*" required>
+		</figure>
+		<article>
+			<h2>Designer d'espace</h2>
+			<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison finale du chantier.</p>
+			<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
+		</article>
+	</section>
+
+	<section id="portfolio">
+		<h2>Mes Projets <button type="button" id="modif-project" class="admin-tool"></button> </h2> 
+
+		<div class="container-filters">
+				<button class="filter-btn active" type="button" id="0">Tous</button>
+				<button class="filter-btn" type="button" id="1">Objets</button>
+				<button class="filter-btn" type="button" id="2">Appartements</button>
+				<button class="filter-btn" type="button" id="3">Hôtels & restaurants</button>
+		</div>
+
+		<div class="gallery">
+			<figure class="waiting_data_figures">
+				<img src="assets/gifs/waiting_data.gif" alt="Image Waiting data">
+				<figcaption>Waiting data ...</figcaption>
+			</figure>
+			<figure class="waiting_data_figures">
+				<img src="assets/gifs/waiting_data.gif" alt="Image Waiting data">
+				<figcaption>Waiting data ...</figcaption>
+			</figure>
+			<figure class="waiting_data_figures">
+				<img src="assets/gifs/waiting_data.gif" alt="Image Waiting data">
+				<figcaption>Waiting data ...</figcaption>
+			</figure>
+		</div>
+	</section>
+	<section id="contact">
+		<h2>Contact</h2>
+		<p>Vous avez un projet ? Discutons-en !</p>
+		<form action="#" method="post">
+			<label for="name">Nom</label>
+			<input type="text" name="name" id="name">
+			<label for="email">Email</label>
+			<input type="email" name="email" id="email">
+			<label for="message">Message</label>
+			<textarea name="message" id="message" cols="30" rows="10"></textarea>
+			<span id="alert"></span>
+			<input type="submit" value="Envoyer">
+		</form>
+	</section>
+
+
+	<aside id="modal-galerie" 
+	class="modal" 
+	aria-hidden="true" 
+	role="dialog"
+	aria-labelledby="modal-title"
+	style="display: none;"
+	>
+		<div class="modal-wrapper modal-stop">
+			<div class="container-galery-and-delete">
+				<div class="container-btn-close-modal"><button type="button" class="close-modal"><i class="fa-solid fa-xmark"></i><span>Fermer la boite modale</span></button></div>
+				<h2 class="modal-title">Galerie photo</h2>
+
+				<figure class="waiting_data_figures">
+					<img src="assets/gifs/waiting_data.gif" alt="Image Waiting data">
+				</figure>
+
+				<div class="modal-galery-container">
+					<div class="modal-galery">
+					</div>
+
+					
+				</div>
+
+				<div class="container-action-btn"><button class="action-modal-btn" type="button" id="add_galery">Ajouter une photo</button></div>
+
+				<div class="container-action-btn"><button class="action-modal-btn" type="button" id="delete_galery">Supprimer la galerie</button></div>
+			</div>
+
+			<div class="container-add-photo">
+				<div class="nav-btn-container">
+					<button type="button" class="back-modal" id="back-galery"><i class="fa-solid fa-arrow-left"></i><span>Revenir à la page précédente</span></button>
+					<button type="button" class="close-modal"><i class="fa-solid fa-xmark"></i><span>Fermer la boite modale</span></button>
+				</div>
+				<h2 class="modal-title">Ajout Photo</h2>
+				<form action="#" enctype="multipart/form-data">
+					<div class="fields-container">
+						<div class="blue-rectangle-upload-photo">
+							<div class="icon-picture"><i class="fa-regular fa-image"></i></div>
+							<label for="imageURL"><i class="fa-solid fa-plus"></i> <span>Ajouter photo</span></label>
+							<input type="file" name="imageURL" id="imageURL" accept="image/*" required>
+							<span class="indication-format">jpg. png : 4mo max</span>
+							<div class="container-uploaded-image"><img id="uploaded-image" src="" alt="Uploaded Image" class="image-upload"></div>
+						</div><br>
+						
+						<div class="container-input-create">
+							<label for="title">Titre</label>
+							<input type="text" name="title" id="title" required><br>
+						</div>
+						
+						<div class="container-input-create">
+							<label for="category">Catégorie</label>
+							<select name="category" id="category" required>
+								<option value=""></option>
+							</select><br>
+						</div>
+
+						<div><span id="alert-modal"></span></div>
+
+						<div class="grey_barre_container">
+							<div class="grey_barre"></div>
+						</div>
+					</div>
+					
+					<div class="container-action-btn"><button class="action-modal-btn validation-btn" type="button" id="add_photo" disabled>Valider</button></div>
+				</form>
+			</div>
+		</div>
+	</aside>
+
+</main>
+
+<footer>
+	<nav>
+		<ul>
+			<li>Mentions Légales</li>
+		</ul>
+	</nav>
+</footer>
+
+<!-- IMPORT FICHIERS JS, splité au maximum pour simplifier la lecture et l'analyse -->
+	<script src="./assets/script.js"></script>
+
+<!-- IMPORT FICHIERS JS, splité au maximum pour simplifier la lecture et l'analyse -->
+
+</body>
+</html>
