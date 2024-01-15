@@ -705,3 +705,41 @@ footer nav ul {
 .container-add-photo{
 	display: none;
 }
+
+#home{
+	display: flex;
+	flex-direction: column;
+}
+
+.menu{
+	margin-left: 50px
+}
+
+/* MODALE */
+
+.top-bar-design{
+	background-color: #000;
+	height: 59px;
+}
+
+.edition{
+	color: white;
+	margin-left: 420px;
+}
+
+#principale{
+	margin-top: 3%;
+}
+
+.pen{
+	margin-left: 5% ;
+}
+
+
+
+
+
+
+
+
+

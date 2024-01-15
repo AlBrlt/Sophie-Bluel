@@ -14,66 +14,18 @@
 	<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-	<div class="arrierePlanGris"></div>
-    <!-- Modale mes projets -->
-    <form id="modaleMesProjets" class="apparenceModales apparenceModalesMesProjets">
-      <button class="croixFermetureModales">
-        <img src="assets/icons/fermer.png" alt="" />
-      </button>
-      <section class="mesProjetsHeader">
-        <h3>Galerie photo(s)</h3>
-      </section>
-      <div class="mesProjetsBody barreScroll"></div>
-      <div class="mesProjetsFooter">
-        <button class="boutonAjouter">Ajouter une photo</button>
-        <button class="boutonSupprimer">Supprimer la galerie</button>
-      </div>
-    </form>
-<!-- Modale ajouter images -->
-<form id="modaleAjouterImages" class="apparenceModales">
-  <button class="flecheRetour">
-    <img src="assets/icons/fleche-gauche.png" alt="" />
-  </button>
-  <button class="croixFermetureModales">
-    <img src="assets/icons/fermer.png" alt="" />
-  </button>
-  <section class="AjouterImagesHeader">
-    <h3>Ajout photo(s)</h3>
-  </section>
-  <div class="AjouterImagesBody">
-    <div class="ajouteTonImage">
-      <img src="assets/icons/image.png" alt="" id="defaultImage" />
-      <img src="#" alt="" id="previewImage" style="display: none" />
-      <label for="file" class="personnalisationInputImage">+ Ajouter photo</label>
-      <input type="file" id="file" class="saisirImage" />
-      <p class="precisionPoids">jpg. png : 4mo max</p>
-    </div>
-    <div class="leTitreDeTonImage">
-      <h4>Titre</h4>
-      <input id="ajouteTonTitre" type="text" />
-    </div>
-    <div class="laCategorieDeTonImage">
-      <h4>Catégorie</h4>
-      <select id="menuDeroulantCategories"></select>
-    </div>
-  </div>
-  <p class="messageErreur"></p>
-  <div class="AjouterImagesFooter">
-    <button disabled class="boutonValider">Valider</button>
-  </div>
-</form>
 
-<div class="modeEdition">
-  <img src="assets/icons/editer.png" alt="icône d'édition" />
-  <p>Mode édition</p>
-  <button>publier les changements</button>
-</div>
-
-
-
-<header>
-	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-	<nav>
+<header id="home">
+	<nav id="top-bar" class="top-bar-design">
+		<div id="principale">
+			<ul class="menu">
+				<li><a class="edition" href="#"><i class="fa-sharp fa-regular fa-pen-to-square pen"></i>Mode édition</a></li>
+			</ul>
+			</nav>
+				<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+			<nav>
+		</div>
+		
 		<ul>
 			<li><a class="nav-link" href="#portfolio">projets</a></li>
 			<li><a class="nav-link" href="#contact">contact</a></li>
@@ -140,74 +92,7 @@
 	</section>
 
 
-	<aside id="modal-galerie" 
-	class="modal" 
-	aria-hidden="true" 
-	role="dialog"
-	aria-labelledby="modal-title"
-	style="display: none;"
-	>
-		<div class="modal-wrapper modal-stop">
-			<div class="container-galery-and-delete">
-				<div class="container-btn-close-modal"><button type="button" class="close-modal"><i class="fa-solid fa-xmark"></i><span>Fermer la boite modale</span></button></div>
-				<h2 class="modal-title">Galerie photo</h2>
 
-				<figure class="waiting_data_figures">
-					<img src="assets/gifs/waiting_data.gif" alt="Image Waiting data">
-				</figure>
-
-				<div class="modal-galery-container">
-					<div class="modal-galery">
-					</div>
-
-					
-				</div>
-
-				<div class="container-action-btn"><button class="action-modal-btn" type="button" id="add_galery">Ajouter une photo</button></div>
-
-				<div class="container-action-btn"><button class="action-modal-btn" type="button" id="delete_galery">Supprimer la galerie</button></div>
-			</div>
-
-			<div class="container-add-photo">
-				<div class="nav-btn-container">
-					<button type="button" class="back-modal" id="back-galery"><i class="fa-solid fa-arrow-left"></i><span>Revenir à la page précédente</span></button>
-					<button type="button" class="close-modal"><i class="fa-solid fa-xmark"></i><span>Fermer la boite modale</span></button>
-				</div>
-				<h2 class="modal-title">Ajout Photo</h2>
-				<form action="#" enctype="multipart/form-data">
-					<div class="fields-container">
-						<div class="blue-rectangle-upload-photo">
-							<div class="icon-picture"><i class="fa-regular fa-image"></i></div>
-							<label for="imageURL"><i class="fa-solid fa-plus"></i> <span>Ajouter photo</span></label>
-							<input type="file" name="imageURL" id="imageURL" accept="image/*" required>
-							<span class="indication-format">jpg. png : 4mo max</span>
-							<div class="container-uploaded-image"><img id="uploaded-image" src="" alt="Uploaded Image" class="image-upload"></div>
-						</div><br>
-						
-						<div class="container-input-create">
-							<label for="title">Titre</label>
-							<input type="text" name="title" id="title" required><br>
-						</div>
-						
-						<div class="container-input-create">
-							<label for="category">Catégorie</label>
-							<select name="category" id="category" required>
-								<option value=""></option>
-							</select><br>
-						</div>
-
-						<div><span id="alert-modal"></span></div>
-
-						<div class="grey_barre_container">
-							<div class="grey_barre"></div>
-						</div>
-					</div>
-					
-					<div class="container-action-btn"><button class="action-modal-btn validation-btn" type="button" id="add_photo" disabled>Valider</button></div>
-				</form>
-			</div>
-		</div>
-	</aside>
 
 </main>
 
@@ -218,6 +103,81 @@
 		</ul>
 	</nav>
 </footer>
+
+<aside id="modal-galerie" 
+class="modal" 
+aria-hidden="true" 
+role="dialog"
+aria-labelledby="modal-title"
+style="display: none;"
+>
+	<div class="modal-wrapper modal-stop">
+		<div class="container-galery-and-delete">
+			<div class="container-btn-close-modal"><button type="button" class="close-modal"><i class="fa-solid fa-xmark"></i><span>Fermer la boite modale</span></button></div>
+			<h2 class="modal-title">Galerie photo</h2>
+
+			<figure class="waiting_data_figures">
+				<img src="assets/gifs/waiting_data.gif" alt="Image Waiting data">
+			</figure>
+
+			<div class="modal-galery-container">
+				<div class="modal-galery">
+				</div>
+
+				
+			</div>
+
+			<div class="container-action-btn"><button class="action-modal-btn" type="button" id="add_galery">Ajouter une photo</button></div>
+
+			<div class="container-action-btn"><button class="action-modal-btn" type="button" id="delete_galery">Supprimer la galerie</button></div>
+		</div>
+
+		<div class="container-add-photo">
+			<div class="nav-btn-container">
+				<button type="button" class="back-modal" id="back-galery"><i class="fa-solid fa-arrow-left"></i><span>Revenir à la page précédente</span></button>
+				<button type="button" class="close-modal"><i class="fa-solid fa-xmark"></i><span>Fermer la boite modale</span></button>
+			</div>
+			<h2 class="modal-title">Ajout Photo</h2>
+			<form action="#" enctype="multipart/form-data">
+				<div class="fields-container">
+					<div class="blue-rectangle-upload-photo">
+						<div class="icon-picture"><i class="fa-regular fa-image"></i></div>
+						<label for="imageURL"><i class="fa-solid fa-plus"></i> <span>Ajouter photo</span></label>
+						<input type="file" name="imageURL" id="imageURL" accept="image/*" required>
+						<span class="indication-format">jpg. png : 4mo max</span>
+						<div class="container-uploaded-image"><img id="uploaded-image" src="" alt="Uploaded Image" class="image-upload"></div>
+					</div><br>
+					
+					<div class="container-input-create">
+						<label for="title">Titre</label>
+						<input type="text" name="title" id="title" required><br>
+					</div>
+					
+					<div class="container-input-create">
+						<label for="category">Catégorie</label>
+						<select name="category" id="category" required>
+							<option value=""></option>
+						</select><br>
+					</div>
+
+					<div><span id="alert-modal"></span></div>
+
+					<div class="grey_barre_container">
+						<div class="grey_barre"></div>
+					</div>
+				</div>
+				
+				<div class="container-action-btn"><button class="action-modal-btn validation-btn" type="button" id="add_photo" disabled>Valider</button></div>
+			</form>
+		</div>
+	</div>
+</aside> 
+
+
+
+
+
+
 
 <!-- IMPORT FICHIERS JS, splité au maximum pour simplifier la lecture et l'analyse -->
 	<script src="./assets/script.js"></script>
